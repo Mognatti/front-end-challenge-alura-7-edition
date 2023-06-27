@@ -1,20 +1,63 @@
-export const banners = [
-  {
-    nome: "banner 1",
-    srcDesktop: "src/assets/Desktop/Banner carousel 1 _ 1440 (1).png",
-    srcTablet: "src/assets/Tablet/Banner carousel 1 _ 768.png",
-    srcMobile: "src/assets/Mobile/Banner carousel 1 _ 375.png",
-  },
-  {
-    nome: "banner 2",
-    srcDesktop: "src/assets/Desktop/Banner carousel 2 _ 1440 (1).png",
-    srcTablet: "src/assets/Tablet/Banner carousel 2 _ 768.png",
-    srcMobile: "src/assets/Mobile/Banner carousel 2 _ 375.png",
-  },
-  {
-    nome: "banner 3",
-    srcDesktop: "src/assets/Desktop/Banner carousel 3 _ 1440 (1).png",
-    srcTablet: "src/assets/Tablet/Banner carousel 3 _ 768.png",
-    srcMobile: "src/assets/Mobile/Banner carousel 3 _ 375.png",
-  },
-];
+import { useState } from "react";
+import {
+  BannerImg,
+  BannerLi,
+  CarrosselList,
+  CarrosselContainer,
+  ImageContainer,
+  LeftArrow,
+  RigthArrow,
+} from "../../../styles/StyledComponents";
+import { banners } from "./bannerList";
+
+export interface HomeComponentsProps {
+  windowWidth: number;
+  tablet: number;
+  mobile: number;
+}
+
+export default function CarrosselBanner({
+  windowWidth,
+  tablet,
+  mobile,
+}: HomeComponentsProps) {
+  const [bannerAtual, setBannerAtual] = useState(0);
+  const length = banners.length;
+
+  function nextBanner() {
+    setBannerAtual(bannerAtual === length - 1 ? 0 : bannerAtual + 1);
+  }
+
+  function prevBanner() {
+    setBannerAtual(bannerAtual === 0 ? length - 1 : bannerAtual - 1);
+  }
+
+  return (
+    <CarrosselContainer>
+      <ImageContainer>
+        <CarrosselList>
+          <LeftArrow onClick={() => prevBanner()} size="25" />
+          {banners.map((banner, index) => {
+            if (index === bannerAtual) {
+              return (
+                <BannerLi key={banner.nome}>
+                  <BannerImg
+                    src={
+                      windowWidth > tablet
+                        ? banner.srcDesktop
+                        : windowWidth <= tablet && windowWidth > mobile
+                        ? banner.srcTablet
+                        : banner.srcMobile
+                    }
+                    alt={banner.nome}
+                  />
+                </BannerLi>
+              );
+            }
+          })}
+          <RigthArrow onClick={() => nextBanner()} size="25" />
+        </CarrosselList>
+      </ImageContainer>
+    </CarrosselContainer>
+  );
+}
