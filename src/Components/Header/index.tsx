@@ -1,10 +1,4 @@
 import {
-  CloseDropDownMenu,
-  CloseDropDownMenuContainer,
-  DropDownMenu,
-  DropDownMenuItem,
-  DropDownMenuLink,
-  DropDownMenuList,
   HamburguerContainer,
   HamburguerIcon,
   HeaderLogo,
@@ -15,10 +9,11 @@ import {
   NavLink,
   NavList,
 } from "../../styles/StyledComponents";
-import { navoptions } from "./components/navOptions";
+import { navOptionsList } from "./components/navOptions";
 import Search from "./components/search";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { useState } from "react";
+import DropDown from "./components/DropDown";
 
 export default function Header() {
   const [showSelect, setShowSelect] = useState(false);
@@ -40,30 +35,15 @@ export default function Header() {
             <HamburguerContainer>
               <HamburguerIcon size="20" onClick={() => setShowSelect(true)} />
               {showSelect && (
-                <DropDownMenu>
-                  <DropDownMenuList>
-                    <CloseDropDownMenuContainer>
-                      <CloseDropDownMenu
-                        size="20"
-                        onClick={() => setShowSelect(false)}
-                      >
-                        X
-                      </CloseDropDownMenu>
-                    </CloseDropDownMenuContainer>
-                    {navoptions.map((option, index) => (
-                      <DropDownMenuItem key={option.id} pos={index}>
-                        <DropDownMenuLink to={option.to}>
-                          {option.nome}
-                        </DropDownMenuLink>
-                      </DropDownMenuItem>
-                    ))}
-                  </DropDownMenuList>
-                </DropDownMenu>
+                <DropDown
+                  navOptionsList={navOptionsList}
+                  setShowSelect={setShowSelect}
+                />
               )}
             </HamburguerContainer>
           ) : (
             <NavList>
-              {navoptions.map((option) => (
+              {navOptionsList.map((option) => (
                 <ListItem key={option.id}>
                   <NavLink to={option.to}>{option.nome}</NavLink>
                 </ListItem>

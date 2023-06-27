@@ -95,9 +95,9 @@ export const CloseDropDownMenuContainer = styled.div`
 export const CloseDropDownMenu = styled(MdClose)`
   color: ${paleta.amarelo};
 `;
-export const DropDownMenuItem = styled.p<{ pos: number }>`
+export const DropDownMenuItem = styled.p<{ showBorder: number }>`
   border-bottom: ${(props) =>
-    props.pos >= 3 ? "none" : `1px solid ${paleta.cinzaClaro}`};
+    props.showBorder >= 3 ? "none" : `1px solid ${paleta.cinzaClaro}`};
   color: ${paleta.cinzaClaro};
   margin: 0;
   margin-left: 8px;
