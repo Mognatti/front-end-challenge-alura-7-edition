@@ -1,4 +1,11 @@
 import {
+  CloseDropDownMenu,
+  CloseDropDownMenuContainer,
+  DropDownMenu,
+  DropDownMenuItem,
+  DropDownMenuLink,
+  DropDownMenuList,
+  HamburguerContainer,
   HamburguerIcon,
   HeaderLogo,
   ListItem,
@@ -11,8 +18,10 @@ import {
 import { navoptions } from "./components/navOptions";
 import Search from "./components/search";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import { useState } from "react";
 
 export default function Header() {
+  const [showSelect, setShowSelect] = useState(false);
   const [{ windowWidth, mobile, showHamburguer }] = useWindowSize();
 
   return (
@@ -28,7 +37,30 @@ export default function Header() {
         />
         <Nav>
           {showHamburguer ? (
-            <HamburguerIcon size="20" />
+            <HamburguerContainer>
+              <HamburguerIcon size="20" onClick={() => setShowSelect(true)} />
+              {showSelect && (
+                <DropDownMenu>
+                  <DropDownMenuList>
+                    <CloseDropDownMenuContainer>
+                      <CloseDropDownMenu
+                        size="20"
+                        onClick={() => setShowSelect(false)}
+                      >
+                        X
+                      </CloseDropDownMenu>
+                    </CloseDropDownMenuContainer>
+                    {navoptions.map((option, index) => (
+                      <DropDownMenuItem key={option.id} pos={index}>
+                        <DropDownMenuLink to={option.to}>
+                          {option.nome}
+                        </DropDownMenuLink>
+                      </DropDownMenuItem>
+                    ))}
+                  </DropDownMenuList>
+                </DropDownMenu>
+              )}
+            </HamburguerContainer>
           ) : (
             <NavList>
               {navoptions.map((option) => (

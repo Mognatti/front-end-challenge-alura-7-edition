@@ -2,11 +2,13 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { TbPlayerPlayFilled } from "react-icons/tb";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdClose } from "react-icons/md";
 
 const paleta = {
   preto: "#000000",
   branco: "#FFFFFF",
-  cinza: "#CCCCCC",
+  cinzaClaro: "#CCCCCC",
+  cinzaEscuro: "#343A40",
   amarelo: "#DAFF01",
   roxo: "#9353FF",
   vermelho: "#EE6471",
@@ -64,9 +66,53 @@ export const LogoAndList = styled.div`
   align-items: center;
   width: 100%;
 `;
+export const HamburguerContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
 export const HamburguerIcon = styled(GiHamburgerMenu)`
   color: ${paleta.amarelo};
 `;
+export const DropDownMenu = styled.div`
+  position: absolute;
+  width: 144px;
+  top: 0;
+  left: 231px;
+  background-color: ${paleta.cinzaEscuro};
+`;
+export const DropDownMenuList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 8px 8px;
+  z-index: 1;
+`;
+export const CloseDropDownMenuContainer = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 10px 10px 0 0;
+`;
+export const CloseDropDownMenu = styled(MdClose)`
+  color: ${paleta.amarelo};
+`;
+export const DropDownMenuItem = styled.p<{ pos: number }>`
+  border-bottom: ${(props) =>
+    props.pos >= 3 ? "none" : `1px solid ${paleta.cinzaClaro}`};
+  color: ${paleta.cinzaClaro};
+  margin: 0;
+  margin-left: 8px;
+  padding: 8px 0 8px 8px;
+  font-weight: 700;
+  width: 80%;
+  &:active {
+    color: ${paleta.amarelo};
+  }
+`;
+export const DropDownMenuLink = styled(Link)`
+  text-decoration: none;
+  color: ${paleta.cinzaClaro};
+`;
+
 export const NavList = styled.ul`
   display: flex;
   flex-direction: row;
@@ -259,7 +305,7 @@ export const ProductsList = styled.ul`
   }
 `;
 export const ProductsItem = styled.li`
-  border: 1px solid ${paleta.cinza};
+  border: 1px solid ${paleta.cinzaClaro};
 `;
 export const ProductsImage = styled.img`
   width: 350px;
