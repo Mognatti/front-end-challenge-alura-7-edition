@@ -95,9 +95,9 @@ export const CloseDropDownMenuContainer = styled.div`
 export const CloseDropDownMenu = styled(MdClose)`
   color: ${paleta.amarelo};
 `;
-export const DropDownMenuItem = styled.p<{ showBorder: number }>`
+export const DropDownMenuItem = styled.p<{ showborder: number }>`
   border-bottom: ${(props) =>
-    props.showBorder >= 3 ? "none" : `1px solid ${paleta.cinzaClaro}`};
+    props.showborder >= 3 ? "none" : `1px solid ${paleta.cinzaClaro}`};
   color: ${paleta.cinzaClaro};
   margin: 0;
   margin-left: 8px;
@@ -108,11 +108,11 @@ export const DropDownMenuItem = styled.p<{ showBorder: number }>`
     color: ${paleta.amarelo};
   }
 `;
-export const DropDownMenuLink = styled(Link)`
+export const DropDownMenuLink = styled(Link)<{ changecolor: boolean }>`
   text-decoration: none;
-  color: ${paleta.cinzaClaro};
+  color: ${(props) =>
+    props.changecolor ? `${paleta.amarelo}` : `${paleta.cinzaClaro}`};
 `;
-
 export const NavList = styled.ul`
   display: flex;
   flex-direction: row;
@@ -139,6 +139,18 @@ export const ListItem = styled.li`
 export const NavLink = styled(Link)`
   text-decoration: none;
   color: white;
+`;
+
+//Footer
+export const FooterContainer = styled.footer`
+  display: flex;
+  justify-content: center;
+  background-color: ${paleta.preto};
+  width: 100%;
+`;
+export const FooterContent = styled.p`
+  color: ${paleta.branco};
+  text-align: center;
 `;
 
 //Search
@@ -428,4 +440,46 @@ export const FacilidadeItemDescription = styled.p`
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;
+`;
+
+//NewsLetter
+export const NewsLetterContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 65.5px;
+`;
+
+export const NewsLetterContent = styled.div`
+  border: 1px solid ${paleta.preto};
+  padding: 40px 16px;
+  width: 50%;
+  text-align: center;
+`;
+export const NewsLetterText = styled.p`
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 24px;
+  margin-top: 0;
+`;
+
+export const Cadastre = styled.span`
+  font-weight: 500;
+`;
+
+export const NewsLetterInput = styled.input`
+  width: 65%;
+  font-size: 16px;
+  line-height: 23px;
+  padding: 6px 15px;
+`;
+
+export const NewsLetterButton = styled.button`
+  border: none;
+  font-size: 16px;
+  background-color: ${paleta.roxo};
+  color: ${paleta.branco};
+  padding: 10px 16px;
 `;

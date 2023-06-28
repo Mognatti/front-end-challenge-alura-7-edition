@@ -7,6 +7,7 @@ import {
   DropDownMenu,
 } from "../../../styles/StyledComponents";
 import { navOptionsType } from "./navOptions";
+import { useState, useEffect } from "react";
 
 interface Props {
   navOptionsList: navOptionsType[];
@@ -14,6 +15,8 @@ interface Props {
 }
 
 export default function DropDown({ navOptionsList, setShowSelect }: Props) {
+  const [changeColor, setChangeColor] = useState<number>();
+
   return (
     <DropDownMenu>
       <DropDownMenuList>
@@ -21,8 +24,14 @@ export default function DropDown({ navOptionsList, setShowSelect }: Props) {
           <CloseDropDownMenu size="20" onClick={() => setShowSelect(false)} />
         </CloseDropDownMenuContainer>
         {navOptionsList.map((option, index) => (
-          <DropDownMenuItem key={option.id} showBorder={index}>
-            <DropDownMenuLink to={option.to}>{option.nome}</DropDownMenuLink>
+          <DropDownMenuItem key={option.id} showborder={index}>
+            <DropDownMenuLink
+              to={option.to}
+              changecolor={changeColor === index}
+              onClick={() => setChangeColor(index)}
+            >
+              {option.nome}
+            </DropDownMenuLink>
           </DropDownMenuItem>
         ))}
       </DropDownMenuList>

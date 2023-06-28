@@ -3,6 +3,7 @@ import { HomeContainer } from "../../styles/StyledComponents";
 import CarrosselBanner from "./BannerImages";
 import Categories from "./Categoria";
 import { Facilidades } from "./Facilidades";
+import NewsLetter from "./NewsLetter";
 import { Products } from "./Products";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <Categories {...{ windowWidth, tablet, mobile }} />
       <Products {...{ windowWidth, tablet, mobile }} />
       <Facilidades {...{ windowWidth, tablet, mobile }} />
+      <NewsLetter />
     </HomeContainer>
   );
 }
