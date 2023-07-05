@@ -1,29 +1,24 @@
 import { useState } from "react";
-import {
-  Cadastre,
-  NewsLetterButton,
-  NewsLetterContainer,
-  NewsLetterContent,
-  NewsLetterInput,
-  NewsLetterText,
-} from "../../../../styles/StyledComponents";
+import * as S from "../../../../styles/StyledComponents";
 import NewsLetterModal from "./NewsLetterModal";
 
+const CTAText =
+  "Quer receber nossas novidades, promoções exclusivas e 10% OFF na primeira compra? ";
 export default function NewsLetter() {
   const [showModal, setShowModal] = useState(false);
   return (
-    <NewsLetterContainer>
-      <NewsLetterContent>
-        <NewsLetterText>
-          Quer receber nossas novidades, promoções exclusivas e 10% OFF na
-          primeira compra? <Cadastre>Cadastre-se!</Cadastre>
-        </NewsLetterText>
-        <NewsLetterInput placeholder="digite seu email..." />
-        <NewsLetterButton onClick={() => setShowModal(true)}>
+    <S.NewsLetterContainer>
+      <S.NewsLetterContent>
+        <S.NewsLetterText>
+          {CTAText}
+          <S.Cadastre>Cadastre-se!</S.Cadastre>
+        </S.NewsLetterText>
+        <S.NewsLetterInput placeholder="digite seu email..." />
+        <S.NewsLetterButton onClick={() => setShowModal(true)}>
           Enviar
-        </NewsLetterButton>
+        </S.NewsLetterButton>
         {showModal && <NewsLetterModal {...{ setShowModal }}></NewsLetterModal>}
-      </NewsLetterContent>
-    </NewsLetterContainer>
+      </S.NewsLetterContent>
+    </S.NewsLetterContainer>
   );
 }
