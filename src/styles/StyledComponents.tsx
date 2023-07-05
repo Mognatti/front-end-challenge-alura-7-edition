@@ -3,16 +3,31 @@ import { Link } from "react-router-dom";
 import { TbPlayerPlayFilled } from "react-icons/tb";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
-
+import { BsCheckCircle } from "react-icons/bs";
 const paleta = {
   preto: "#000000",
   branco: "#FFFFFF",
-  cinzaClaro: "#CCCCCC",
+  offWhite: "#DEE2E6",
   cinzaEscuro: "#343A40",
+  cinzaClaro: "#CCCCCC",
   amarelo: "#DAFF01",
   roxo: "#9353FF",
   vermelho: "#EE6471",
   laranja: "#F87F46",
+};
+
+const typography = {
+  fontSize: {
+    title: "20px",
+    content: "16px",
+    small: "13px",
+  },
+  fontWeight: {
+    bold: "700",
+    extra: "500",
+    regular: "400",
+    light: "300",
+  },
 };
 
 const breakPoints = {
@@ -276,7 +291,6 @@ export const CategoriesList = styled.ul`
   }
 `;
 export const CategoriesItem = styled.li``;
-
 export const CategorisItemName = styled.p`
   text-align: center;
   color: ${paleta.branco};
@@ -349,6 +363,9 @@ export const ProductsItemInfoDescription = styled.p`
   line-height: 20px;
   margin: 0;
 `;
+export const ProductPrice = styled.p`
+  font-weight: ${typography.fontWeight.bold};
+`;
 export const ProductButtonContainer = styled.div`
   padding: 0 0 16px 16px;
 `;
@@ -357,6 +374,145 @@ export const ProductButton = styled.button`
   color: ${paleta.branco};
   border: none;
   padding: 9px 16px;
+  cursor: pointer;
+`;
+
+//Modal
+export const Background = styled.div`
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const ModalContainer = styled.div`
+  width: 700px;
+  height: 587px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+  border-radius: 10px;
+`;
+export const ModalContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1.8;
+  color: #141414;
+`;
+export const ModalHeader = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: ${paleta.preto};
+  width: 100%;
+  height: 65px;
+`;
+export const ModalHeaderIcon = styled(BsCheckCircle)`
+  color: ${paleta.amarelo};
+  padding: 0 20px 0 16px;
+`;
+export const ModalHeaderTitle = styled.p`
+  color: ${paleta.branco};
+`;
+export const ModalHeaderButtonContainer = styled.div`
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+`;
+export const ModalCloseButton = styled(MdClose)`
+  color: ${paleta.cinzaClaro};
+  cursor: pointer;
+`;
+export const ModalImage = styled.img`
+  width: 350px;
+  height: 422px;
+  padding: 16px 0 0 16px;
+`;
+export const ModalTextInfo = styled.div`
+  padding: 16px 16px 0 16px;
+`;
+export const ModalTitle = styled.h3`
+  margin: 0;
+  line-height: 23px;
+`;
+export const ModalDescription = styled.p`
+  padding: 24px 0;
+  border-bottom: 1px solid ${paleta.preto};
+  margin: 0;
+  font-size: ${typography.fontSize.small};
+`;
+export const ModalPrice = styled.p`
+  font-weight: bold;
+  margin: 0;
+  padding: 24px 0;
+  font-size: ${typography.fontSize.title};
+`;
+export const ModalProvider = styled.p`
+  margin: 0;
+  padding: 0 0 16px 0;
+  color: ${paleta.cinzaClaro};
+  font-size: ${typography.fontSize.small};
+`;
+export const ModalSelectRadio = styled.div`
+  border-top: 1px solid ${paleta.cinzaClaro};
+  padding: 8px 0px;
+`;
+export const ModalSelectTitle = styled.p`
+  padding: 0 16px;
+  margin: 0;
+  line-height: 20px;
+  font-weight: ${typography.fontWeight.bold};
+  font-size: ${typography.fontSize.small};
+`;
+export const ModalRadioList = styled.ul`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
+export const ModalRadioListItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  font-size: ${typography.fontSize.small};
+  padding: 8px 8px;
+`;
+export const ModalRadioInput = styled.input<{ color?: string }>`
+  appearance: none;
+  background-color: ${(props) =>
+    props.color === "Preto"
+      ? `${paleta.preto}`
+      : props.color === "Offwhite"
+      ? `${paleta.offWhite}`
+      : props.color === "Azul claro"
+      ? "#75D7F0"
+      : "#FFF"};
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 1px ${paleta.offWhite};
+  border: none;
+  &:checked {
+    box-shadow: inset 0px 0px 0px 4px ${paleta.roxo};
+  }
+`;
+export const ModalRadioLabel = styled.label`
+  font-size: ${typography.fontSize.small};
+  font-weight: ${typography.fontWeight.regular};
+`;
+export const ModalButton = styled.button`
+  background-color: ${paleta.roxo};
+  color: ${paleta.branco};
+  border: none;
+  padding: 9px 16px;
+  font-weight: ${typography.fontWeight.extra};
+  cursor: pointer;
 `;
 
 //Facilidades
@@ -450,7 +606,6 @@ export const NewsLetterContainer = styled.section`
   justify-content: center;
   padding: 65.5px;
 `;
-
 export const NewsLetterContent = styled.div`
   border: 1px solid ${paleta.preto};
   padding: 40px 16px;
@@ -464,18 +619,15 @@ export const NewsLetterText = styled.p`
   margin-bottom: 24px;
   margin-top: 0;
 `;
-
 export const Cadastre = styled.span`
   font-weight: 500;
 `;
-
 export const NewsLetterInput = styled.input`
   width: 65%;
   font-size: 16px;
   line-height: 23px;
   padding: 6px 15px;
 `;
-
 export const NewsLetterButton = styled.button`
   border: none;
   font-size: 16px;

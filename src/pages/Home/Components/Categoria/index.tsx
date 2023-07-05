@@ -4,8 +4,8 @@ import {
   CategoriesList,
   CategoriesTitle,
   CategorisItemName,
-} from "../../../styles/StyledComponents";
-import { HomeComponentsProps } from "../BannerImages";
+} from "../../../../styles/StyledComponents";
+import { HomeComponentsProps } from "../interface";
 import { categorias } from "./categoriasList";
 
 const title = "Busque por categoria:";

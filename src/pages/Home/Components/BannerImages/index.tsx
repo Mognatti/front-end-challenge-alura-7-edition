@@ -7,14 +7,9 @@ import {
   ImageContainer,
   LeftArrow,
   RigthArrow,
-} from "../../../styles/StyledComponents";
+} from "../../../../styles/StyledComponents";
 import { banners } from "./bannerList";
-
-export interface HomeComponentsProps {
-  windowWidth: number;
-  tablet: number;
-  mobile: number;
-}
+import { HomeComponentsProps } from "../interface";
 
 export default function CarrosselBanner({
   windowWidth,

@@ -5,7 +5,7 @@ import {
   NewsLetterContent,
   NewsLetterInput,
   NewsLetterText,
-} from "../../../styles/StyledComponents";
+} from "../../../../styles/StyledComponents";
 
 export default function NewsLetter() {
   return (

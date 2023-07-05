@@ -1,10 +1,10 @@
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { HomeContainer } from "../../styles/StyledComponents";
-import CarrosselBanner from "./BannerImages";
-import Categories from "./Categoria";
-import { Facilidades } from "./Facilidades";
-import NewsLetter from "./NewsLetter";
-import { Products } from "./Products";
+import CarrosselBanner from "./Components/BannerImages";
+import Categories from "./Components/Categoria";
+import { Facilidades } from "./Components/Facilidades";
+import NewsLetter from "./Components/NewsLetter";
+import { Products } from "./Components/Products";
 
 export default function Home() {
   const [{ windowWidth, tablet, mobile }] = useWindowSize();

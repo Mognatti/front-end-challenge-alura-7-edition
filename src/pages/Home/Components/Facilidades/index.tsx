@@ -7,8 +7,8 @@ import {
   FacilidadesItemTitle,
   FacilidadesList,
   FacilidadesTitle,
-} from "../../../styles/StyledComponents";
-import { HomeComponentsProps } from "../BannerImages";
+} from "../../../../styles/StyledComponents";
+import { HomeComponentsProps } from "../interface";
 import { facilidadesList } from "./facilidadesList";
 
 const title = "Conheça todas as nossas facilidades";
