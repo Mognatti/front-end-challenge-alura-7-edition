@@ -664,4 +664,5 @@ export const NewsLetterButton = styled.button`
   background-color: ${paleta.roxo};
   color: ${paleta.branco};
   padding: 10px 16px;
+  cursor: pointer;
 `;

@@ -3,12 +3,18 @@ import { ModalProps } from "../../../interface";
 import ColorOptions from "./components/ColorOptions";
 import SizeOptions from "./components/SizeOptions";
 
-export default function Modal({ item, closeModal }: ModalProps) {
+export default function Modal({
+  modalItem,
+  closeModal,
+  windowWidth,
+  tablet,
+  mobile,
+}: ModalProps) {
   const modalRadioList = [
     <S.ModalSelectRadio key="1">
       <S.ModalSelectTitle> Cores: </S.ModalSelectTitle>
       <S.ModalRadioList>
-        {item.colorOptions.map((color) => (
+        {modalItem.colorOptions.map((color) => (
           <ColorOptions key={color.id} {...color} />
         ))}
       </S.ModalRadioList>
@@ -16,7 +22,7 @@ export default function Modal({ item, closeModal }: ModalProps) {
     <S.ModalSelectRadio key="2">
       <S.ModalSelectTitle> Tamanho: </S.ModalSelectTitle>
       <S.ModalRadioList>
-        {item.size.map((size) => (
+        {modalItem.size.map((size) => (
           <SizeOptions key={size} size={size} />
         ))}
       </S.ModalRadioList>
@@ -37,12 +43,21 @@ export default function Modal({ item, closeModal }: ModalProps) {
         </S.ModalHeader>
         <S.ModalContent>
           <S.ModalImageContainer className="image">
-            <S.ModalImage src={item.srcDesktop} alt={item.name} />
+            <S.ModalImage
+              src={
+                windowWidth > tablet
+                  ? modalItem.srcDesktop
+                  : windowWidth > mobile
+                  ? modalItem.srcTablet
+                  : modalItem.srcMobile
+              }
+              alt={modalItem.name}
+            />
           </S.ModalImageContainer>
           <S.ModalTextInfo>
-            <S.ModalTitle>{item.name}</S.ModalTitle>
-            <S.ModalDescription>{item.description}</S.ModalDescription>
-            <S.ModalPrice>{item.price}</S.ModalPrice>
+            <S.ModalTitle>{modalItem.name}</S.ModalTitle>
+            <S.ModalDescription>{modalItem.description}</S.ModalDescription>
+            <S.ModalPrice>{modalItem.price}</S.ModalPrice>
             <S.ModalProvider>Vendido e entregue por alguém 😉</S.ModalProvider>
             {modalRadioList.map((list) => list)}
             <S.ModalButtonContainer className="sacola">

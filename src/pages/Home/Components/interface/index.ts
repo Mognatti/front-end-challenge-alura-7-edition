@@ -25,8 +25,11 @@ export interface ProductCardProps {
 }
 
 export interface ModalProps {
-  item: product;
+  modalItem: product;
   closeModal: () => void;
+  windowWidth: number;
+  tablet: number;
+  mobile: number;
 }
 export interface SizeOptionsProps {
   size: string;

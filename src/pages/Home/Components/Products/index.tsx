@@ -28,7 +28,9 @@ export function Products({ windowWidth, tablet, mobile }: HomeComponentsProps) {
             {...{ product, mobile, tablet, windowWidth, setModalItem }}
           />
         ))}
-        {modalItem && <Modal item={modalItem} closeModal={closeModal} />}
+        {modalItem && (
+          <Modal {...{ modalItem, closeModal, windowWidth, tablet, mobile }} />
+        )}
       </ProductsList>
     </ProductsContainer>
   );
