@@ -166,6 +166,11 @@ export const FooterContainer = styled.footer`
 export const FooterContent = styled.p`
   color: ${paleta.branco};
   text-align: center;
+  @media (max-width: ${breakPoints.mobile}) {
+    font-size: ${typography.fontSize.small};
+    padding: 0 64px;
+    margin: 17px 0;
+  }
 `;
 
 //Search
@@ -639,10 +644,16 @@ export const NewsLetterContainer = styled.section`
   padding: 65.5px;
 `;
 export const NewsLetterContent = styled.div`
-  border: 1px solid ${paleta.preto};
+  border: 2px solid ${paleta.preto};
   padding: 40px 16px;
   width: 50%;
   text-align: center;
+  @media (max-width: ${breakPoints.tablet}) {
+    width: 100%;
+  }
+  @media (max-width: ${breakPoints.mobile}) {
+    width: 130%;
+  }
 `;
 export const NewsLetterText = styled.p`
   font-size: 20px;
@@ -650,6 +661,9 @@ export const NewsLetterText = styled.p`
   line-height: 24px;
   margin-bottom: 24px;
   margin-top: 0;
+  @media (max-width: ${breakPoints.mobile}) {
+    font-size: ${typography.fontSize.content};
+  }
 `;
 export const Cadastre = styled.span`
   font-weight: 500;
