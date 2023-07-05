@@ -399,6 +399,10 @@ export const ModalContainer = styled.div`
   position: relative;
   z-index: 10;
   border-radius: 10px;
+  overflow-y: initial;
+  @media (max-width: ${breakPoints.mobile}) {
+    width: 343px;
+  }
 `;
 export const ModalContent = styled.div`
   display: flex;
@@ -406,6 +410,10 @@ export const ModalContent = styled.div`
   align-items: flex-start;
   line-height: 1.8;
   color: #141414;
+  overflow-y: auto;
+  @media (max-width: ${breakPoints.mobile}) {
+    flex-direction: column;
+  }
 `;
 export const ModalHeader = styled.div`
   display: flex;
@@ -417,6 +425,9 @@ export const ModalHeader = styled.div`
 export const ModalHeaderIcon = styled(BsCheckCircle)`
   color: ${paleta.amarelo};
   padding: 0 20px 0 16px;
+  @media (max-width: ${breakPoints.mobile}) {
+    transform: scale(1.6);
+  }
 `;
 export const ModalHeaderTitle = styled.p`
   color: ${paleta.branco};
@@ -425,15 +436,28 @@ export const ModalHeaderButtonContainer = styled.div`
   width: 50%;
   display: flex;
   justify-content: flex-end;
+  @media (max-width: ${breakPoints.mobile}) {
+    margin-right: 28px;
+  }
 `;
 export const ModalCloseButton = styled(MdClose)`
   color: ${paleta.cinzaClaro};
   cursor: pointer;
 `;
+export const ModalImageContainer = styled.div`
+  @media (max-width: ${breakPoints.mobile}) {
+    display: flex;
+    justify-content: center;
+  }
+`;
 export const ModalImage = styled.img`
   width: 350px;
   height: 422px;
   padding: 16px 0 0 16px;
+  @media (max-width: ${breakPoints.mobile}) {
+    width: 311px;
+    margin-top: 430px;
+  }
 `;
 export const ModalTextInfo = styled.div`
   padding: 16px 16px 0 16px;
@@ -486,6 +510,7 @@ export const ModalRadioListItem = styled.li`
 `;
 export const ModalRadioInput = styled.input<{ color?: string }>`
   appearance: none;
+  cursor: pointer;
   background-color: ${(props) =>
     props.color === "Preto"
       ? `${paleta.preto}`
@@ -505,6 +530,11 @@ export const ModalRadioInput = styled.input<{ color?: string }>`
 export const ModalRadioLabel = styled.label`
   font-size: ${typography.fontSize.small};
   font-weight: ${typography.fontWeight.regular};
+`;
+export const ModalButtonContainer = styled.div`
+  @media (max-width: ${breakPoints.mobile}) {
+    padding: 0 16px 32px 16px;
+  }
 `;
 export const ModalButton = styled.button`
   background-color: ${paleta.roxo};

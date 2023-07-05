@@ -4,7 +4,7 @@ export function useWindowSize() {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [showHamburguer, setShowHamburguer] = useState<boolean>();
   const tablet = 768;
-  const mobile = 375;
+  const mobile = 376;
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
