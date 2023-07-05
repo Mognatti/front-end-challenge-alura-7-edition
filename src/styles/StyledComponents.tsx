@@ -384,6 +384,7 @@ export const Background = styled.div`
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
   bottom: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -431,6 +432,7 @@ export const ModalHeaderIcon = styled(BsCheckCircle)`
 `;
 export const ModalHeaderTitle = styled.p`
   color: ${paleta.branco};
+  text-align: initial;
 `;
 export const ModalHeaderButtonContainer = styled.div`
   width: 50%;
@@ -665,4 +667,33 @@ export const NewsLetterButton = styled.button`
   color: ${paleta.branco};
   padding: 10px 16px;
   cursor: pointer;
+`;
+export const NewsLetterModalContainer = styled.div`
+  width: 700px;
+  height: 136px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+  border-radius: 10px;
+  overflow-y: initial;
+  @media (max-width: ${breakPoints.mobile}) {
+    width: 343px;
+  }
+`;
+export const NewsLetterModalContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`;
+export const NewsLetterModalText = styled.p`
+  padding: 16px;
+  font-size: ${typography.fontSize.content};
+  line-height: 23px;
+  margin: 0;
+  text-align: initial;
 `;

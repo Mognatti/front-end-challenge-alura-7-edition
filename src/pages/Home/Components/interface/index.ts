@@ -34,3 +34,7 @@ export interface ModalProps {
 export interface SizeOptionsProps {
   size: string;
 }
+
+export interface NewsLetterModalProps {
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+}

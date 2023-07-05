@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Cadastre,
   NewsLetterButton,
@@ -6,8 +7,10 @@ import {
   NewsLetterInput,
   NewsLetterText,
 } from "../../../../styles/StyledComponents";
+import NewsLetterModal from "./NewsLetterModal";
 
 export default function NewsLetter() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <NewsLetterContainer>
       <NewsLetterContent>
@@ -16,7 +19,10 @@ export default function NewsLetter() {
           primeira compra? <Cadastre>Cadastre-se!</Cadastre>
         </NewsLetterText>
         <NewsLetterInput placeholder="digite seu email..." />
-        <NewsLetterButton>Enviar</NewsLetterButton>
+        <NewsLetterButton onClick={() => setShowModal(true)}>
+          Enviar
+        </NewsLetterButton>
+        {showModal && <NewsLetterModal {...{ setShowModal }}></NewsLetterModal>}
       </NewsLetterContent>
     </NewsLetterContainer>
   );
