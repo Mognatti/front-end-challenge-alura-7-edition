@@ -643,7 +643,7 @@ export const NewsLetterContainer = styled.section`
   justify-content: center;
   padding: 65.5px;
 `;
-export const NewsLetterContent = styled.div`
+export const NewsLetterContent = styled.form`
   border: 2px solid ${paleta.preto};
   padding: 40px 16px;
   width: 50%;
