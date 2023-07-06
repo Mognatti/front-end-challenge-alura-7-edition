@@ -58,7 +58,9 @@ export default function Modal({
             <S.ModalTitle>{modalItem.name}</S.ModalTitle>
             <S.ModalDescription>{modalItem.description}</S.ModalDescription>
             <S.ModalPrice>{modalItem.price}</S.ModalPrice>
-            <S.ModalProvider>Vendido e entregue por alguém 😉</S.ModalProvider>
+            <S.ModalProvider>
+              Vendido e entregue por {modalItem.provider}
+            </S.ModalProvider>
             {modalRadioList.map((list) => list)}
             <S.ModalButtonContainer className="sacola">
               <S.ModalButton> Adicionar à sacola </S.ModalButton>

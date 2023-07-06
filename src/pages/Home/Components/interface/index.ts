@@ -14,6 +14,8 @@ export type product = {
   srcMobile: string;
   colorOptions: { color: string; id: number }[];
   size: string[];
+  provider: string;
+  category: string;
 };
 
 export interface ProductCardProps {
