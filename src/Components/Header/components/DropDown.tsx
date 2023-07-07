@@ -7,7 +7,7 @@ import {
   DropDownMenu,
 } from "../../../styles/StyledComponents";
 import { navOptionsType } from "./navOptions";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 interface Props {
   navOptionsList: navOptionsType[];
