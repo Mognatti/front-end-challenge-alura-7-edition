@@ -2,6 +2,8 @@ import * as S from "../../../../../../styles/StyledComponents";
 import { ModalProps } from "../../../../../../interface";
 import ColorOptions from "./components/ColorOptions";
 import SizeOptions from "./components/SizeOptions";
+import { useSpring, animated } from "react-spring";
+import { useRef, useCallback, useEffect } from "react";
 
 export default function Modal({
   modalItem,
@@ -29,45 +31,72 @@ export default function Modal({
     </S.ModalSelectRadio>,
   ];
 
+  const animation = useSpring({
+    config: {
+      duration: 250,
+    },
+    opacity: modalItem ? 1 : 0,
+    transform: modalItem ? `translateY(0%)` : `translateY(-100%)`,
+  });
+
+  const backgroundRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (backgroundRef.current === e.target) {
+      closeModal();
+    }
+  };
+
+  const keyPress = useCallback((e: any) => {
+    if (e.key === "Escape" && modalItem) closeModal();
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("keydown", keyPress);
+    return () => document.removeEventListener("keydown", keyPress);
+  }, [keyPress]);
+
   return (
-    <S.Background>
-      <S.ModalContainer>
-        <S.ModalHeader>
-          <S.ModalHeaderIcon size="25" />
-          <S.ModalHeaderTitle>
-            Confira Detalhes sobre o Produto
-          </S.ModalHeaderTitle>
-          <S.ModalHeaderButtonContainer>
-            <S.ModalCloseButton size="20" onClick={() => closeModal()} />
-          </S.ModalHeaderButtonContainer>
-        </S.ModalHeader>
-        <S.ModalContent>
-          <S.ModalImageContainer className="image">
-            <S.ModalImage
-              src={
-                windowWidth > tablet
-                  ? modalItem.srcDesktop
-                  : windowWidth > mobile
-                  ? modalItem.srcTablet
-                  : modalItem.srcMobile
-              }
-              alt={modalItem.name}
-            />
-          </S.ModalImageContainer>
-          <S.ModalTextInfo>
-            <S.ModalTitle>{modalItem.name}</S.ModalTitle>
-            <S.ModalDescription>{modalItem.description}</S.ModalDescription>
-            <S.ModalPrice>{modalItem.price}</S.ModalPrice>
-            <S.ModalProvider>
-              Vendido e entregue por {modalItem.provider}
-            </S.ModalProvider>
-            {modalRadioList.map((list) => list)}
-            <S.ModalButtonContainer className="sacola">
-              <S.ModalButton> Adicionar à sacola </S.ModalButton>
-            </S.ModalButtonContainer>
-          </S.ModalTextInfo>
-        </S.ModalContent>
-      </S.ModalContainer>
+    <S.Background ref={backgroundRef} onClick={(e) => handleClick(e)}>
+      <animated.div style={animation}>
+        <S.ModalContainer>
+          <S.ModalHeader>
+            <S.ModalHeaderIcon size="25" />
+            <S.ModalHeaderTitle>
+              Confira Detalhes sobre o Produto
+            </S.ModalHeaderTitle>
+            <S.ModalHeaderButtonContainer>
+              <S.ModalCloseButton size="20" onClick={() => closeModal()} />
+            </S.ModalHeaderButtonContainer>
+          </S.ModalHeader>
+          <S.ModalContent>
+            <S.ModalImageContainer className="image">
+              <S.ModalImage
+                src={
+                  windowWidth > tablet
+                    ? modalItem.srcDesktop
+                    : windowWidth > mobile
+                    ? modalItem.srcTablet
+                    : modalItem.srcMobile
+                }
+                alt={modalItem.name}
+              />
+            </S.ModalImageContainer>
+            <S.ModalTextInfo>
+              <S.ModalTitle>{modalItem.name}</S.ModalTitle>
+              <S.ModalDescription>{modalItem.description}</S.ModalDescription>
+              <S.ModalPrice>{modalItem.price}</S.ModalPrice>
+              <S.ModalProvider>
+                Vendido e entregue por {modalItem.provider}
+              </S.ModalProvider>
+              {modalRadioList.map((list) => list)}
+              <S.ModalButtonContainer className="sacola">
+                <S.ModalButton> Adicionar à sacola </S.ModalButton>
+              </S.ModalButtonContainer>
+            </S.ModalTextInfo>
+          </S.ModalContent>
+        </S.ModalContainer>
+      </animated.div>
     </S.Background>
   );
 }
