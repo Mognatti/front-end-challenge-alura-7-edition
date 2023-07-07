@@ -1,5 +1,5 @@
 import * as S from "../../../../../styles/StyledComponents";
-import { NewsLetterModalProps } from "../../interface";
+import { NewsLetterModalProps } from "../../../../../interface";
 
 export default function NewsLetterModal({
   setShowModal,

@@ -5,7 +5,7 @@ import {
   CategoriesTitle,
   CategorisItemName,
 } from "../../../../styles/StyledComponents";
-import { CategoryProps } from "../interface";
+import { CategoryProps } from "../../../../interface";
 import { categorias } from "./categoriasList";
 
 const title = "Busque por categoria:";

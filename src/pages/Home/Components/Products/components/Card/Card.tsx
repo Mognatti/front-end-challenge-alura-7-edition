@@ -9,7 +9,7 @@ import {
   ProductsItemInfoDescriptionContainer,
   ProductsItemInfoTitle,
 } from "../../../../../../styles/StyledComponents";
-import { ProductCardProps } from "../../../interface";
+import { ProductCardProps } from "../../../../../../interface";
 
 export default function ProductCard({
   product,

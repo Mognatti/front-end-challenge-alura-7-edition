@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
-import {
-  ProductsContainer,
-  ProductsList,
-  ProductsTitle,
-} from "../../../../styles/StyledComponents";
-import { ProductsProps, product } from "../interface";
+import { useState } from "react";
+import * as S from "../../../../styles/StyledComponents";
+import { ProductsProps, product } from "../../../../interface";
 import Modal from "./components/Modal";
 import ProductCard from "./components/Card/Card";
+import useFilter from "../../../../hooks/useFilter";
+import Loading from "../Loading";
 
 const title = "Produtos que estão bombando!";
 
@@ -20,43 +18,20 @@ export function Products({
   search,
 }: ProductsProps) {
   const [modalItem, setModalItem] = useState<product | null>(null);
-  const [filteredList, setFilteredList] = useState<product[] | undefined>(
-    productList
-  );
-
-  const categoryFilter = (selected: string) => {
-    if (selected) {
-      return selected.toLowerCase().includes(category.toLowerCase());
-    } else {
-      return true;
-    }
-  };
-
-  const searchFilter = (selected: string) => {
-    const reg = new RegExp(search, "i");
-    return reg.test(selected);
-  };
-
-  useEffect(() => {
-    const newList = productList?.filter(
-      (product) =>
-        searchFilter(product.name) && categoryFilter(product.category)
-    );
-    setFilteredList(newList);
-  }, [category, search, productList]);
+  const [{ filteredList }] = useFilter({ productList, search, category });
 
   function closeModal() {
     setModalItem(null);
   }
 
   if (isLoading) {
-    return <p>Carregando dados...</p>;
+    return <Loading />;
   }
   if (productList)
     return (
-      <ProductsContainer>
-        <ProductsTitle>{title}</ProductsTitle>
-        <ProductsList>
+      <S.ProductsContainer>
+        <S.ProductsTitle>{title}</S.ProductsTitle>
+        <S.ProductsList>
           {filteredList?.map((product) => (
             <ProductCard
               key={product.id}
@@ -68,7 +43,7 @@ export function Products({
               {...{ modalItem, closeModal, windowWidth, tablet, mobile }}
             />
           )}
-        </ProductsList>
-      </ProductsContainer>
+        </S.ProductsList>
+      </S.ProductsContainer>
     );
 }

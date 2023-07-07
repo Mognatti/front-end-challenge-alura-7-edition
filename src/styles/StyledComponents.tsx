@@ -713,3 +713,83 @@ export const NewsLetterModalText = styled.p`
   margin: 0;
   text-align: initial;
 `;
+
+//Loading
+export const LoadingContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 260px;
+  margin-left: 210px;
+`;
+
+export const Ring = styled.div`
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: transparent;
+  border: 3px solid #3c3c3c;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 200px;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: ${paleta.amarelo};
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px ${paleta.amarelo};
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  &:before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top: 3px solid ${paleta.amarelo};
+    border-right: 3px solid ${paleta.amarelo};
+    border-radius: 50%;
+    animation: animateC 2s linear infinite;
+  }
+  @keyframes animateC {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+export const Dot = styled.span`
+  display: block;
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  transform-origin: left;
+  animation: animate 2s linear infinite;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: ${paleta.amarelo};
+    top: -6px;
+    right: -8px;
+    box-shadow: 0 0 20px ${paleta.amarelo};
+  }
+  @keyframes animate {
+    0% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(405deg);
+    }
+  }
+`;

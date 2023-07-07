@@ -1,5 +1,5 @@
 import * as S from "../../../../../../styles/StyledComponents";
-import { ModalProps } from "../../../interface";
+import { ModalProps } from "../../../../../../interface";
 import ColorOptions from "./components/ColorOptions";
 import SizeOptions from "./components/SizeOptions";
 

@@ -9,7 +9,7 @@ import {
   RigthArrow,
 } from "../../../../styles/StyledComponents";
 import { banners } from "./bannerList";
-import { HomeComponentsProps } from "../interface";
+import { HomeComponentsProps } from "../../../../interface";
 
 export default function CarrosselBanner({
   windowWidth,

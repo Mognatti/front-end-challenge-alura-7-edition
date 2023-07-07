@@ -2,7 +2,7 @@ import {
   ModalRadioInput,
   ModalRadioListItem,
 } from "../../../../../../../styles/StyledComponents";
-import { SizeOptionsProps } from "../../../../interface";
+import { SizeOptionsProps } from "../../../../../../../interface";
 
 export default function SizeOptions({ size }: SizeOptionsProps) {
   return (
