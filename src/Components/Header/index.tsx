@@ -13,7 +13,7 @@ import { navOptionsList } from "./components/navOptions";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { useState } from "react";
 import DropDown from "./components/DropDown";
-import Search from "./components/Search";
+import Search from "./components/HeaderSearch";
 
 interface HeaderProps {
   search: string;
