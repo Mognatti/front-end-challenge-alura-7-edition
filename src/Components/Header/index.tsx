@@ -13,7 +13,7 @@ import { navOptionsList } from "./components/navOptions";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { useState } from "react";
 import DropDown from "./components/DropDown";
-import Search from "./components/search";
+import Search from "./components/Search";
 
 interface HeaderProps {
   search: string;
@@ -30,8 +30,8 @@ export default function Header({ search, setSearch }: HeaderProps) {
         <HeaderLogo
           src={
             windowWidth <= mobile
-              ? "src/assets/Mobile/Logo mobile.png"
-              : "src/assets/Desktop/Logo-desktop.png"
+              ? "images/Mobile/Logo mobile.png"
+              : "images/Desktop/Logo-desktop.png"
           }
           alt="Meteora-logo"
         />
