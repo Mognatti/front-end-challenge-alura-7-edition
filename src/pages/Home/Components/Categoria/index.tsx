@@ -5,7 +5,7 @@ import {
   CategoriesTitle,
   CategorisItemName,
 } from "../../../../styles/StyledComponents";
-import { HomeComponentsProps } from "../interface";
+import { CategoryProps } from "../interface";
 import { categorias } from "./categoriasList";
 
 const title = "Busque por categoria:";
@@ -13,13 +13,22 @@ export default function Categories({
   windowWidth,
   tablet,
   mobile,
-}: HomeComponentsProps) {
+  category,
+  setCategory,
+}: CategoryProps) {
+  function filterCategory(selected: string) {
+    category === selected ? setCategory("") : setCategory(selected);
+  }
+
   return (
     <CategoriesContainer>
       <CategoriesTitle>{title}</CategoriesTitle>
       <CategoriesList>
         {categorias.map((categoria) => (
-          <CategoriesItem key={categoria.id}>
+          <CategoriesItem
+            onClick={() => filterCategory(categoria.name)}
+            key={categoria.id}
+          >
             <img
               src={
                 windowWidth > tablet

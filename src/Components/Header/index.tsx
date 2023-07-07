@@ -10,12 +10,17 @@ import {
   NavList,
 } from "../../styles/StyledComponents";
 import { navOptionsList } from "./components/navOptions";
-import Search from "./components/search";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { useState } from "react";
 import DropDown from "./components/DropDown";
+import Search from "./components/search";
 
-export default function Header() {
+interface HeaderProps {
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function Header({ search, setSearch }: HeaderProps) {
   const [showSelect, setShowSelect] = useState(false);
   const [{ windowWidth, mobile, showHamburguer }] = useWindowSize();
 
@@ -52,7 +57,7 @@ export default function Header() {
           )}
         </Nav>
       </LogoAndList>
-      <Search />
+      <Search {...{ search, setSearch }} />
     </NavHeader>
   );
 }

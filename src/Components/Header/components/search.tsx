@@ -3,10 +3,12 @@ import {
   SearchContainer,
   SearchInput,
 } from "../../../styles/StyledComponents";
-import { useState } from "react";
 
-export default function Search() {
-  const [search, setSearch] = useState("");
+interface SearchProps {
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+}
+export default function Search({ search, setSearch }: SearchProps) {
   return (
     <SearchContainer>
       <SearchInput

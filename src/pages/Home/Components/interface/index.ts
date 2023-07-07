@@ -4,6 +4,24 @@ export interface HomeComponentsProps {
   mobile: number;
 }
 
+export interface CategoryProps {
+  windowWidth: number;
+  tablet: number;
+  mobile: number;
+  category: string;
+  setCategory: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export interface ProductsProps {
+  windowWidth: number;
+  tablet: number;
+  mobile: number;
+  productList: product[] | undefined;
+  isLoading: boolean;
+  category: string;
+  search: string;
+}
+
 export type product = {
   id: number;
   name: string;

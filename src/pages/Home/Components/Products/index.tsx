@@ -1,19 +1,49 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ProductsContainer,
   ProductsList,
   ProductsTitle,
 } from "../../../../styles/StyledComponents";
-import { HomeComponentsProps, product } from "../interface";
+import { ProductsProps, product } from "../interface";
 import Modal from "./components/Modal";
 import ProductCard from "./components/Card/Card";
-import useFetchData from "../../../../hooks/useFetchData";
 
 const title = "Produtos que estão bombando!";
 
-export function Products({ windowWidth, tablet, mobile }: HomeComponentsProps) {
+export function Products({
+  windowWidth,
+  tablet,
+  mobile,
+  productList,
+  isLoading,
+  category,
+  search,
+}: ProductsProps) {
   const [modalItem, setModalItem] = useState<product | null>(null);
-  const [{ productList, isLoading }] = useFetchData();
+  const [filteredList, setFilteredList] = useState<product[] | undefined>(
+    productList
+  );
+
+  const categoryFilter = (selected: string) => {
+    if (selected) {
+      return selected.toLowerCase().includes(category.toLowerCase());
+    } else {
+      return true;
+    }
+  };
+
+  const searchFilter = (selected: string) => {
+    const reg = new RegExp(search, "i");
+    return reg.test(selected);
+  };
+
+  useEffect(() => {
+    const newList = productList?.filter(
+      (product) =>
+        searchFilter(product.name) && categoryFilter(product.category)
+    );
+    setFilteredList(newList);
+  }, [category, search, productList]);
 
   function closeModal() {
     setModalItem(null);
@@ -27,7 +57,7 @@ export function Products({ windowWidth, tablet, mobile }: HomeComponentsProps) {
       <ProductsContainer>
         <ProductsTitle>{title}</ProductsTitle>
         <ProductsList>
-          {productList?.map((product) => (
+          {filteredList?.map((product) => (
             <ProductCard
               key={product.id}
               {...{ product, mobile, tablet, windowWidth, setModalItem }}

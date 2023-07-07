@@ -295,7 +295,9 @@ export const CategoriesList = styled.ul`
     flex-wrap: wrap;
   }
 `;
-export const CategoriesItem = styled.li``;
+export const CategoriesItem = styled.li`
+  cursor: pointer;
+`;
 export const CategorisItemName = styled.p`
   text-align: center;
   color: ${paleta.branco};
