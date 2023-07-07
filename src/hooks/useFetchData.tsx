@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { product } from "../pages/Home/Components/interface";
 import { supabase } from "../supabaseClient";
 import { SupabaseClient } from "@supabase/supabase-js";
+import { product } from "../interface";
 export default function useFetchData() {
   const [productList, setProductList] = useState<product[]>();
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +16,9 @@ export default function useFetchData() {
         return [{ isError, isLoading }];
       }
       setProductList(data);
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2500);
       return [{ productList, isLoading }];
     }
     fetchData(supabase);
