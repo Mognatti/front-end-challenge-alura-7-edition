@@ -15,12 +15,12 @@ Link do projeto: <a href='https://front-end-challenge-alura-7-edition.vercel.app
 ### Objetivos da semana 1 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Bullseye.png" alt="Bullseye" width="25" height="25" />
   
 - [x] Cabeçalho contendo: Logo da marca; Links (home, nossas lojas, novidades e promoções); Campo de pesquisa; Botão para buscar.
-- [x] Responsividade do Cabeçalho
+- [x] Responsividade* do Cabeçalho
 - [x] Banner contendo as imagens da página
 - [x] Seção "Busque por categorias" contendo: Titulo: “Busque por categoria”; Cards de produtos: com foto e nome da categoria.
 - [x] Seção "Produtos" contendo: Título: “Produtos que estão bombando”; Cards dos produtos: com foto, título, descrição, valor e botão “Ver mais”.
 - [x] Seção "Facilidades" contendo: 'Pague pelo pix'; 'Troca grátis'; 'Sustentabilidade'.
-- [x] Responsividade para todas as sessões
+- [x] Responsividade* para todas as sessões
 
 ### Objetivos da semana 2 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Bullseye.png" alt="Bullseye" width="25" height="25" />
 
@@ -28,7 +28,7 @@ Link do projeto: <a href='https://front-end-challenge-alura-7-edition.vercel.app
 - [x] Cadastro na Newsletter - A empresa Meteora também tem uma newsletter, com objetivo de divulgar e reter clientes. Precisamos desenvolver o componente dessa newsletter que contém: Texto: “Quer receber nossas novidades, promoções exclusivas e 10% OFF na primeira compra? Cadastre-se!”; Campo de digitação para e-mail; Botão de envio.
 - [x] Carrossel: Precisamos criar uma experiência visual atraente e envolvente para os visitantes da página da empresa Meteora. Por isso, vamos aplicar um Carrossel no banner principal da página!
 - [x] Modal - Produtos: Ao clicar em qualquer produto da página, um modal será aberto. Nesse modal, teremos: Cabeçalho com a frase “Confira detalhes sobre o produto” e um ícone de fechar (X). Foto do produto; Nome do produto; Descrição do produto; Valor; Observação de vendido e entregue por “…”; Opções de cores; Opções de tamanho; Botão de adicionar a sacola.
-- [x]  Modal - Produtos - Responsividade
+- [x]  Modal - Produtos - Responsividade*
 - [x]  Modal - Newsletter: Na newsletter, quando a pessoa cadastrar o e-mail, um Modal deverá ser aberto. Esse modal deve conter: Um cabeçalho com a frase “E-mail cadastrado com sucesso!” e um ícone de fechar (X); Um texto informando “Em breve você receberá novidades exclusivas da Meteora.”.
 
 ### Objetivos da semana 3 e 4 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Bullseye.png" alt="Bullseye" width="25" height="25" />
@@ -39,6 +39,8 @@ Link do projeto: <a href='https://front-end-challenge-alura-7-edition.vercel.app
 - [x] Modal de Produtos - Abrir / Fechar: O modal que criamos deve permitir duas funcionalidades: Ao clicar em um produto da página, o modal correspondente deve ser aberto, exibindo os detalhes do produto selecionado e fechar o Modal ao clicar no ícone de “X”.
 - [x] Modal de Newsletter - Abrir / Fechar: O modal da Newsltetter também deve permitir duas funcionalidades: Ao clicar no botão de cadastro na newsletter, o modal correspondente deve ser aberto, permitindo que as pessoas usuárias preencham as informações; e fechar o Modal ao clicar no ícone de “X”.
 - [x] Cadastro Newsletter - Validação: Não queremos que o campo de e-mail seja enviado vazio ou preenchido com algo que não seja um formato válido de e-mail. Por isso, vamos implementar uma validação para esse campo, seja em HTML ou utilizando JavaScript.
+
+*A responsividade foi definida com alguns breakpoints - width de 768px para tablet e de 376px para mobile
 
 ### 🛠 Tecnologias
 
