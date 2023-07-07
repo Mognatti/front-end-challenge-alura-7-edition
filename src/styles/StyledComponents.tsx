@@ -33,7 +33,7 @@ const typography = {
 const breakPoints = {
   desktop: "1440px",
   tablet: "768px",
-  mobile: "376px",
+  mobile: "386px",
 };
 
 //Header
