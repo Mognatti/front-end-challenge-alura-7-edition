@@ -7,6 +7,8 @@
 
 Figma do projeto: <a href='https://www.figma.com/file/2TLgt8UjsWUViWlmpXu5Fz/Challenge-Front-end-%7C-Loja-Meteora?type=design&node-id=2386-2430&mode=design&t=LY8nUVqjpWGqaxun-0'>lembre-se de abrir em uma nova aba!</a>
 
+Link do projeto: <a href='https://front-end-challenge-alura-7-edition.vercel.app/'>lembre-se de abrir em uma nova aba!</a>
+
 <h4 align="center"> 🚧 ...Projeto em desenvolvimento... 🚧</h4>
 <p>Embora já tenha feito todas as etapas mandatórias do desafio, como ainda tenho bastate tempo, planjeo implementar uma página de admin, que permitirá a inserção, edição e deleção de novos produtos na página.</p>
 
