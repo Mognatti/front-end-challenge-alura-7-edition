@@ -40,7 +40,7 @@ Link do projeto: <a href='https://front-end-challenge-alura-7-edition.vercel.app
 - [x] Modal de Newsletter - Abrir / Fechar: O modal da Newsltetter também deve permitir duas funcionalidades: Ao clicar no botão de cadastro na newsletter, o modal correspondente deve ser aberto, permitindo que as pessoas usuárias preencham as informações; e fechar o Modal ao clicar no ícone de “X”.
 - [x] Cadastro Newsletter - Validação: Não queremos que o campo de e-mail seja enviado vazio ou preenchido com algo que não seja um formato válido de e-mail. Por isso, vamos implementar uma validação para esse campo, seja em HTML ou utilizando JavaScript.
 
-*A responsividade foi definida com alguns breakpoints - width de 768px para tablet e de 376px para mobile
+*A responsividade foi definida com alguns breakpoints - width de 768px para tablet e de 386px para mobile
 
 ### 🛠 Tecnologias
 
