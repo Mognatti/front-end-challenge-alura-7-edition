@@ -258,16 +258,21 @@ export const LeftArrow = styled(TbPlayerPlayFilled)`
     transition: 350ms;
     transform: rotateY(180deg) scale(1.2);
   }
+  @media (max-width: ${breakPoints.mobile}) {
+    margin-left: 7%;
+  }
 `;
 export const RigthArrow = styled(TbPlayerPlayFilled)`
   position: absolute;
-  margin-right: 38.23px;
   margin-left: 95%;
   cursor: pointer;
   color: ${paleta.branco};
   &:hover {
     transition: 350ms;
     transform: scale(1.2);
+  }
+  @media (max-width: ${breakPoints.mobile}) {
+    margin-left: 85%;
   }
 `;
 
