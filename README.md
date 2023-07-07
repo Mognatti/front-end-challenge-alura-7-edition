@@ -1,7 +1,7 @@
 <h1 align='center'>Front End Challenge - 7 edição (Alura) <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Flexed%20Biceps%20Light%20Skin%20Tone.png" alt="Flexed Biceps Light Skin Tone" width="30" /> </h1>
 <p> Desafio proposto pela alura para que os alunos consigam realizar o desenvolvimento de uma página a partir de um figma. Embora possa tirar dúvidas com os instrutores e colegas (via discord) a ideia é que o estudante consiga desenvolver uma aplicação do zero com base apenas em um desing feito pela Alura.</p>
 
-<h2 align="center"> Meteora  <img src='src/assets/Favicon-48x.png' width='25'/></h2>
+<h2 align="center"> Meteora  <img src='public/images/Favicon-48x.png' width='25'/></h2>
 
 <p>Bem vindos a Meteora! Meteora é um site fictício de venda de roupas. Através desse site, você pode ver o acervo de produtos que está armazenado em um banco de dados (supabase - postgreSQL) e filtrar esses produtos de acordo com a categoria a qual ele pertence ou pelo seu nome.</p>
 
