@@ -40,7 +40,7 @@ const breakPoints = {
 export const NavHeader = styled.header`
   display: flex;
   width: 100%;
-  height: 8.3vh;
+  height: 8svh;
   align-items: center;
   justify-content: flex-start;
   position: absolute;
@@ -111,8 +111,7 @@ export const CloseDropDownMenu = styled(MdClose)`
   color: ${paleta.amarelo};
 `;
 export const DropDownMenuItem = styled.p<{ showborder: number }>`
-  border-bottom: ${(props) =>
-    props.showborder >= 3 ? "none" : `1px solid ${paleta.cinzaClaro}`};
+  border-bottom: ${(props) => (props.showborder >= 3 ? "none" : `1px solid ${paleta.cinzaClaro}`)};
   color: ${paleta.cinzaClaro};
   margin: 0;
   margin-left: 8px;
@@ -125,8 +124,7 @@ export const DropDownMenuItem = styled.p<{ showborder: number }>`
 `;
 export const DropDownMenuLink = styled(Link)<{ changecolor: boolean }>`
   text-decoration: none;
-  color: ${(props) =>
-    props.changecolor ? `${paleta.amarelo}` : `${paleta.cinzaClaro}`};
+  color: ${(props) => (props.changecolor ? `${paleta.amarelo}` : `${paleta.cinzaClaro}`)};
 `;
 export const NavList = styled.ul`
   display: flex;
@@ -222,7 +220,7 @@ export const HomeContainer = styled.div`
 export const CarrosselContainer = styled.section`
   display: flex;
   flex-direction: row;
-  margin-top: 40px;
+  margin-top: 58px;
   width: 100%;
 `;
 export const ImageContainer = styled.div`

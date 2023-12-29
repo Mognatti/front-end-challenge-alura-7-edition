@@ -28,23 +28,14 @@ export default function Header({ search, setSearch }: HeaderProps) {
     <NavHeader>
       <LogoAndList>
         <HeaderLogo
-          src={
-            windowWidth <= mobile
-              ? "images/Mobile/Logo mobile.png"
-              : "images/Desktop/Logo-desktop.png"
-          }
+          src={windowWidth <= mobile ? "images/Mobile/Logo mobile.png" : "images/Desktop/Logo-desktop.png"}
           alt="Meteora-logo"
         />
         <Nav>
           {showHamburguer ? (
             <HamburguerContainer>
               <HamburguerIcon size="20" onClick={() => setShowSelect(true)} />
-              {showSelect && (
-                <DropDown
-                  navOptionsList={navOptionsList}
-                  setShowSelect={setShowSelect}
-                />
-              )}
+              {showSelect && <DropDown navOptionsList={navOptionsList} setShowSelect={setShowSelect} />}
             </HamburguerContainer>
           ) : (
             <NavList>

@@ -11,11 +11,7 @@ import {
 import { banners } from "./bannerList";
 import { HomeComponentsProps } from "../../../../interface";
 
-export default function CarrosselBanner({
-  windowWidth,
-  tablet,
-  mobile,
-}: HomeComponentsProps) {
+export default function CarrosselBanner({ windowWidth, tablet, mobile }: HomeComponentsProps) {
   const [bannerAtual, setBannerAtual] = useState(0);
   const length = banners.length;
 
