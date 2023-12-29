@@ -84,23 +84,25 @@ export const LogoAndList = styled.div`
 export const HamburguerContainer = styled.div`
   display: flex;
   align-items: center;
+  z-index: 99;
 `;
 export const HamburguerIcon = styled(GiHamburgerMenu)`
   color: ${paleta.amarelo};
+  z-index: 99;
 `;
 export const DropDownMenu = styled.div`
   position: absolute;
   width: 144px;
   top: 0;
-  left: 231px;
+  right: 0;
   background-color: ${paleta.cinzaEscuro};
+  z-index: 99;
 `;
 export const DropDownMenuList = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 0 8px 8px;
-  z-index: 1;
 `;
 export const CloseDropDownMenuContainer = styled.div`
   display: flex;
